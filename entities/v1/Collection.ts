@@ -17,19 +17,17 @@ export interface Collection extends Omit<v2.Collection, 'uploader_id' | 'date_up
     }[];
     id: number;
   }[];
-  modes: Modes;
+  modes: {
+    osu: number;
+    taiko: number;
+    fruits: number;
+    mania: number;
+  };
   difficultySpread: DifficultySpread;
   bpmSpread: BpmSpread;
   favouritedBy: number[];
   favourites: number;
   comments: Comment[];
-}
-
-interface Modes {
-  osu: number;
-  taiko: number;
-  fruits: number;
-  mania: number;
 }
 
 interface DifficultySpread {
