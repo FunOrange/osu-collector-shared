@@ -23,5 +23,5 @@ export interface BeatmapWithBeatmapset extends Beatmap {
 }
 
 export function trimRawBeatmap(doc: any): Beatmap {
-  return pick(BeatmapKeys, doc);
+  return pick(BeatmapKeys, doc) as Beatmap;
 }

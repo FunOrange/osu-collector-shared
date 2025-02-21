@@ -20,5 +20,5 @@ export function trimRawUser(raw: any): User {
     assoc('country_name', raw.country.name),
     assoc('country_rank', raw.statistics.country_rank),
     assoc('global_rank', raw.statistics.global_rank),
-  )(raw);
+  )(raw) as User;
 }

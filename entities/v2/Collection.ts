@@ -17,5 +17,5 @@ export function trimRawCollection(raw: any): Collection {
     assoc('uploader_id', raw.uploader.id),
     assoc('date_uploaded', raw.dateUploaded.toDate()),
     assoc('date_modified', raw.dateLastModified.toDate()),
-  )(raw);
+  )(raw) as Collection;
 }

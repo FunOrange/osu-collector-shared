@@ -19,5 +19,5 @@ export type Beatmapset = typeof BeatmapsetSample;
 export const BeatmapsetKeys = Object.keys(BeatmapsetSample) as (keyof Beatmapset)[];
 
 export function trimRawBeatmapset(raw: any): Beatmapset {
-  return pipe(pick(BeatmapsetKeys), assoc('cover', raw.covers?.cover))(raw);
+  return pipe(pick(BeatmapsetKeys), assoc('cover', raw.covers?.cover))(raw) as Beatmapset;
 }
