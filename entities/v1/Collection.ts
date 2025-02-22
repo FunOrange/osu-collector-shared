@@ -25,7 +25,10 @@ export interface Collection extends Omit<v2.Collection, 'uploader_id' | 'date_up
   };
   difficultySpread: DifficultySpread;
   bpmSpread: BpmSpread;
-  favouritedBy: number[];
+  /**
+   * @deprecated
+   */
+  favouritedBy?: number[];
   favourites: number;
   comments: Comment[];
 }
