@@ -6,8 +6,8 @@ export interface User {
   uploads: any[];
   favourites: number[];
   osuweb: OsuwebUser;
-  private: Private;
-  paidFeaturesAccess: boolean;
+  private?: Private;
+  paidFeaturesAccess?: boolean;
 }
 
 export interface OsuwebUser {
