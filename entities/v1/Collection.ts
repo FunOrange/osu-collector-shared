@@ -3,12 +3,11 @@ import { FirestoreTimestamp } from './FirestoreTimestamp';
 import * as v2 from '../v2/Collection';
 
 export interface Collection extends Omit<v2.Collection, 'uploader_id' | 'date_uploaded' | 'date_modified'> {
-  uploader: Uploader; // join on uploader_id
-  dateUploaded: FirestoreTimestamp; // convert date
-  dateLastModified: FirestoreTimestamp; // convert date
-
-  beatmapCount: number; // count collection_beatmaps where collection_id = id
-  unsubmittedBeatmapCount: number; // count collection_beatmaps where collection_id = id
+  uploader: Uploader;
+  dateUploaded: FirestoreTimestamp;
+  dateLastModified: FirestoreTimestamp;
+  beatmapCount: number;
+  unsubmittedBeatmapCount: number;
   unknownChecksums: [];
   beatmapsets: {
     beatmaps: {
