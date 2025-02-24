@@ -30,22 +30,21 @@ export interface OsuwebUser {
 
 interface Private {
   linkedTwitchAccount: LinkedTwitchAccount;
-  stripeSubscriptionId: string;
   twitchError: boolean;
   twitchToken: TwitchToken;
+  stripeSubscriptionId: string;
+  stripeCustomer: StripeCustomer;
   subscriptionExpiryDate: FirestoreTimestamp;
   paypalSubscriptionId: string;
-  stripeCustomer: StripeCustomer;
 }
 
 interface LinkedTwitchAccount {
-  profilePictureUrl: string;
   displayName: string;
   name: string;
   id: string;
 }
 
-interface TwitchToken {
+export interface TwitchToken {
   expiresIn: number;
   scope: string[];
   obtainmentTimestamp: number;
