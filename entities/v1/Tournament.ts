@@ -1,21 +1,21 @@
-import { Beatmap } from '@/shared/entities/v1/Beatmap';
-import { Uploader } from '@/shared/entities/v1/Uploader';
-import { FirestoreTimestamp } from '@/types';
+import { Beatmap } from './Beatmap';
+import { Uploader } from './Uploader';
+import { FirestoreTimestamp } from './FirestoreTimestamp';
 
 export interface Tournament {
-  unknownIds: any[];
-  link: string;
-  downloadUrl: string;
-  dateUploaded: FirestoreTimestamp;
-  description: string;
-  banner: string;
-  dateModified: FirestoreTimestamp;
-  organizerIds: number[];
-  uploader: Uploader;
-  name: string;
-  organizers: Organizer[];
   id: number;
+  name: string;
+  link: string;
+  banner: string;
+  downloadUrl: string;
+  description: string;
+  organizerIds: number[];
+  organizers: Organizer[];
+  uploader: Uploader;
   rounds: Round[];
+  unknownIds: any[];
+  dateUploaded: FirestoreTimestamp;
+  dateModified: FirestoreTimestamp;
 }
 
 export interface Organizer {
