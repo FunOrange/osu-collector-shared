@@ -18,7 +18,7 @@ export interface Tournament {
 
 export const toV1Tournament = (
   tournament: Tournament,
-  uploader?: User,
+  uploader?: Pick<User, 'id' | 'username' | 'global_rank'>,
   organizers?: TournamentOrganizer[],
   tournamentBeatmaps?: (TournamentBeatmap &
     Beatmap & {
