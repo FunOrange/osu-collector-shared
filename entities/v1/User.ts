@@ -29,13 +29,13 @@ export interface OsuwebUser {
 }
 
 interface Private {
-  linkedTwitchAccount: LinkedTwitchAccount;
-  twitchError: boolean;
-  twitchToken: TwitchToken;
-  stripeSubscriptionId: string;
-  stripeCustomer: StripeCustomer;
-  subscriptionExpiryDate: FirestoreTimestamp;
-  paypalSubscriptionId: string;
+  linkedTwitchAccount?: LinkedTwitchAccount;
+  twitchError?: boolean;
+  twitchToken?: TwitchToken;
+  stripeSubscriptionId?: string;
+  stripeCustomer?: StripeCustomer;
+  subscriptionExpiryDate?: FirestoreTimestamp;
+  paypalSubscriptionId?: string;
 }
 
 interface LinkedTwitchAccount {
