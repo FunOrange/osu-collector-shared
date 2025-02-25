@@ -1,8 +1,7 @@
 import * as V1 from '../v1';
-import { toFirestoreTimestamp } from '@/shared/entities/v1/FirestoreTimestamp';
-import { TournamentBeatmap, TournamentOrganizer } from '@/entities/mysql-entities';
-import { User } from '@/shared/entities/v2/User';
-import { Beatmap } from '@/shared/entities/v2/Beatmap';
+import { toFirestoreTimestamp } from '../v1/FirestoreTimestamp';
+import { User } from './User';
+import { Beatmap } from './Beatmap';
 
 export interface Tournament {
   id: number;
@@ -107,3 +106,21 @@ export const toV1Tournament = (
     return rounds;
   })(),
 });
+
+export interface TournamentBeatmap {
+  id: number;
+  tournament_id: number;
+  round: string;
+  round_sequence: number;
+  mod: string;
+  mod_sequence: number;
+  beatmap_id_unsafe: number;
+  beatmap_id?: number;
+  beatmap_sequence: number;
+}
+
+export interface TournamentOrganizer {
+  tournament_id: number;
+  user_id: number;
+  username: string;
+}
