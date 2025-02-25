@@ -1,4 +1,4 @@
-import { toFirestoreTimestamp } from '@/shared/entities/v1/FirestoreTimestamp';
+import { toFirestoreTimestamp } from '../v1/FirestoreTimestamp';
 import { TwitchToken } from '../v1';
 import * as V1 from '../v1';
 
