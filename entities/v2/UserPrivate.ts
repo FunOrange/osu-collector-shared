@@ -23,6 +23,7 @@ export interface UserPrivate {
 }
 
 export const toV1UserPrivate = (row: UserPrivate): V1.User['private'] => {
+  if (!row) return undefined;
   const userPrivate = {
     linkedTwitchAccount:
       row.twitch_display_name || row.twitch_name || row.twitch_id
