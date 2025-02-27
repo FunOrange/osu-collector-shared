@@ -13,5 +13,6 @@ export function toFirestoreTimestamp(date: Date | string): FirestoreTimestamp {
 }
 
 export function fromFirestoreTimestamp(timestamp: FirestoreTimestamp): string {
+  if (!timestamp) return undefined;
   return new Date(timestamp._seconds * 1000).toISOString();
 }
