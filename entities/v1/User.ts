@@ -8,6 +8,7 @@ export interface User {
   osuweb: OsuwebUser;
   private?: Private;
   paidFeaturesAccess?: boolean;
+  hasActiveTwitchSub?: boolean;
 }
 
 export interface OsuwebUser {
