@@ -1,5 +1,5 @@
 import { UserPrivate } from '../v2/UserPrivate';
-import { FirestoreTimestamp } from './FirestoreTimestamp';
+import { FirestoreTimestamp, fromFirestoreTimestamp, toFirestoreTimestamp } from './FirestoreTimestamp';
 
 export interface User {
   id: number;
@@ -43,6 +43,7 @@ export const toV2UserPrivate = (userId: number, privateData: Private): UserPriva
   if (!privateData) return null;
   return {
     user_id: userId,
+    subscription_expiry_date: fromFirestoreTimestamp(privateData.subscriptionExpiryDate),
     twitch_display_name: privateData.linkedTwitchAccount?.displayName ?? null,
     twitch_name: privateData.linkedTwitchAccount?.name ?? null,
     twitch_id: privateData.linkedTwitchAccount?.id ?? null,
