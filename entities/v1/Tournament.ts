@@ -49,6 +49,7 @@ const tournamentBeatmapSample = {
   bpm: 185,
   status: 'ranked',
 };
+export type TournamentBeatmap = typeof tournamentBeatmapSample;
 
 export interface Mod {
   mod: string;
