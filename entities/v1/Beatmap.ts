@@ -2,6 +2,7 @@ import { Beatmapset } from './Beatmapset';
 import * as v2 from '../v2/Beatmap';
 
 export interface Beatmap extends v2.Beatmap {
+  url: string;
   beatmapset: Beatmapset;
 }
 
