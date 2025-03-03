@@ -7,5 +7,11 @@ export interface CreateTournamentDto {
   downloadUrl?: string;
   description?: string;
   organizers?: number[];
-  rounds: V1.Tournament['rounds'];
+  rounds: {
+    round: string;
+    mods: {
+      mod: string;
+      maps: number[];
+    }[];
+  }[];
 }

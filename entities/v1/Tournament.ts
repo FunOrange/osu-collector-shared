@@ -1,4 +1,3 @@
-import { Beatmap } from './Beatmap';
 import { Uploader } from './Uploader';
 import { FirestoreTimestamp } from './FirestoreTimestamp';
 
@@ -59,31 +58,3 @@ export interface Mod {
 export interface Covers {
   card: string;
 }
-
-export const flattenTournamentBeatmaps = (tournament: Pick<Tournament, 'id' | 'rounds'>) => {
-  const tournamentBeatmaps: {
-    tournament_id: number;
-    round: string;
-    round_sequence: number;
-    mod: string;
-    mod_sequence: number;
-    beatmap_id: number;
-    beatmap_sequence: number;
-  }[] = [];
-  tournament.rounds.forEach((round, round_sequence) => {
-    round.mods.forEach((mod, mod_sequence) => {
-      mod.maps.forEach((beatmap, beatmap_sequence) => {
-        tournamentBeatmaps.push({
-          tournament_id: tournament.id,
-          round: round.round,
-          round_sequence,
-          mod: mod.mod,
-          mod_sequence,
-          beatmap_id: beatmap.id,
-          beatmap_sequence,
-        });
-      });
-    });
-  });
-  return tournamentBeatmaps;
-};
