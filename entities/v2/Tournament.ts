@@ -81,7 +81,7 @@ export const toV1Tournament = (
           maps: [],
         });
       mod.maps.push({
-        id: tournamentBeatmap.beatmap_id,
+        id: tournamentBeatmap.beatmap_id_unsafe,
         checksum: tournamentBeatmap.checksum,
         difficulty_rating: tournamentBeatmap.difficulty_rating,
         accuracy: tournamentBeatmap.accuracy,
