@@ -7,7 +7,7 @@ export interface Beatmap extends v2.Beatmap {
 }
 
 export const groupBeatmapsets = (beatmaps: Beatmap[]) => {
-  if (beatmaps?.length === 0) {
+  if (!beatmaps?.length) {
     return [];
   }
   let groups = [];
