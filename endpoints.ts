@@ -1,6 +1,6 @@
 import { safe } from '@/utils/string-utils';
 
-export const endpoint = {
+export const endpoints = {
   collections: {
     POST: '/api/collections',
     popularv2: { GET: '/api/collections/popularv2' },
@@ -21,6 +21,7 @@ export const endpoint = {
         }),
       },
       beatmapsv2: { GET: safe`/api/collections/${collectionId}/beatmapsv2` },
+      beatmapsv3: { GET: safe`/api/collections/${collectionId}/beatmapsv3` },
       favourite: {
         POST: safe`/api/collections/${collectionId}/favourite`,
         DELETE: safe`/api/collections/${collectionId}/favourite`,
