@@ -1,12 +1,10 @@
-import { safe } from '@/utils/string-utils';
-
 export const endpoints = {
   collections: {
     POST: '/api/collections',
     popularv2: { GET: '/api/collections/popularv2' },
     recent: { GET: '/api/collections/recent' },
     search: { GET: '/api/collections/search' },
-    id: (collectionId: number) => ({
+    id: (collectionId: string | number) => ({
       GET: safe`/api/collections/${collectionId}`,
       DELETE: safe`/api/collections/${collectionId}`,
       collectionDb: {
@@ -15,7 +13,7 @@ export const endpoints = {
       },
       comments: {
         POST: safe`/api/collections/${collectionId}/comments`,
-        id: (commentId: number) => ({
+        id: (commentId: string | number) => ({
           GET: safe`/api/collections/${collectionId}/comments/${commentId}`,
           like: { POST: safe`/api/collections/${collectionId}/comments/${commentId}/like` },
         }),
@@ -35,3 +33,10 @@ export const endpoints = {
     }),
   },
 };
+
+function safe(strings: TemplateStringsArray, ...values: any[]): string | undefined {
+  if (values.some((value) => value === undefined)) {
+    return undefined;
+  }
+  return String.raw(strings, ...values);
+}
