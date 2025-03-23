@@ -26,6 +26,7 @@ export interface Round {
   round: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tournamentBeatmapSample = {
   difficulty_rating: 5.74,
   accuracy: 8,

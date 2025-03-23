@@ -10,7 +10,7 @@ export const groupBeatmapsets = (beatmaps: Beatmap[]) => {
   if (beatmaps?.length === 0) {
     return [];
   }
-  let groups = [];
+  const groups = [];
   let currentGroup = null;
   for (const beatmap of beatmaps) {
     if (currentGroup === null) {

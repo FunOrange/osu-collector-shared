@@ -1,5 +1,3 @@
-import * as V1 from '../entities/v1';
-
 export interface CreateTournamentDto {
   name: string;
   link: string;

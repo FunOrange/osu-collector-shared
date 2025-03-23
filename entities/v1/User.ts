@@ -1,5 +1,5 @@
 import { UserPrivate } from '../v2/UserPrivate';
-import { FirestoreTimestamp, fromFirestoreTimestamp, toFirestoreTimestamp } from './FirestoreTimestamp';
+import { FirestoreTimestamp, fromFirestoreTimestamp } from './FirestoreTimestamp';
 
 export interface User {
   id: number;
