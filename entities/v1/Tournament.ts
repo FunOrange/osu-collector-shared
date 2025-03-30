@@ -26,6 +26,11 @@ export interface Round {
   round: string;
 }
 
+export interface Mod {
+  mod: string;
+  maps: (typeof tournamentBeatmapSample)[];
+}
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tournamentBeatmapSample = {
   difficulty_rating: 5.74,
@@ -50,11 +55,6 @@ const tournamentBeatmapSample = {
   status: 'ranked',
 };
 export type TournamentBeatmap = typeof tournamentBeatmapSample;
-
-export interface Mod {
-  mod: string;
-  maps: (typeof tournamentBeatmapSample)[];
-}
 
 export interface Covers {
   card: string;
