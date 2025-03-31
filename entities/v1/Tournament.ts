@@ -31,7 +31,7 @@ export interface Mod {
   maps: (typeof tournamentBeatmapSample)[];
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line
 const tournamentBeatmapSample = {
   difficulty_rating: 5.74,
   accuracy: 8,
