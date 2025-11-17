@@ -34,6 +34,7 @@ export const toV1Tournament = (
   banner: tournament.banner,
   downloadUrl: tournament.download_url,
   description: tournament.description,
+  // @ts-ignore:next-line
   uploader: uploader
     ? {
         id: uploader.id,
@@ -41,14 +42,19 @@ export const toV1Tournament = (
         rank: uploader.global_rank,
       }
     : undefined,
+  // @ts-ignore:next-line
   organizers:
     organizers?.map((organizer) => ({
       id: organizer.user_id,
       username: organizer.username,
     })) ?? undefined,
+  // @ts-ignore:next-line
   organizerIds: organizers?.map((organizer) => organizer.user_id),
+  // @ts-ignore:next-line
   dateUploaded: toFirestoreTimestamp(tournament.date_uploaded),
+  // @ts-ignore:next-line
   dateModified: toFirestoreTimestamp(tournament.date_modified),
+  // @ts-ignore:next-line
   rounds: (() => {
     if (!tournamentBeatmaps) {
       return undefined;

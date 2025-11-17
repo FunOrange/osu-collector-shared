@@ -4,22 +4,22 @@ import * as V1 from '../v1';
 
 export interface UserPrivate {
   user_id: number;
-  subscription_expiry_date?: string;
+  subscription_expiry_date?: string | null;
 
   // twitch
-  twitch_display_name?: string;
-  twitch_name?: string;
-  twitch_id?: string;
-  twitch_error?: boolean;
-  twitch_token?: TwitchToken;
+  twitch_display_name?: string | null;
+  twitch_name?: string | null;
+  twitch_id?: string | null;
+  twitch_error?: boolean | null;
+  twitch_token?: TwitchToken | null;
 
   // stripe
-  stripe_subscription_id?: string;
-  stripe_customer_id?: string;
-  stripe_customer_email?: string;
+  stripe_subscription_id?: string | null;
+  stripe_customer_id?: string | null;
+  stripe_customer_email?: string | null;
 
   // paypal
-  paypal_subscription_id?: string;
+  paypal_subscription_id?: string | null;
 }
 
 export const toV1UserPrivate = (row: UserPrivate): V1.User['private'] => {
@@ -43,8 +43,10 @@ export const toV1UserPrivate = (row: UserPrivate): V1.User['private'] => {
             email: row.stripe_customer_email,
           }
         : undefined,
+    // @ts-ignore:next-line
     subscriptionExpiryDate: toFirestoreTimestamp(row.subscription_expiry_date),
     paypalSubscriptionId: row.paypal_subscription_id,
   };
+  // @ts-ignore:next-line
   return userPrivate;
 };

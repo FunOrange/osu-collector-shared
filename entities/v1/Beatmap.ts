@@ -10,8 +10,8 @@ export const groupBeatmapsets = (beatmaps: Beatmap[]) => {
   if (!beatmaps?.length) {
     return [];
   }
-  const groups = [];
-  let currentGroup = null;
+  const groups: { beatmapset: Beatmapset; beatmaps: Beatmap[] }[] = [];
+  let currentGroup: (typeof groups)[0] | null = null;
   for (const beatmap of beatmaps) {
     if (!beatmap.beatmapset) continue;
 
@@ -31,6 +31,6 @@ export const groupBeatmapsets = (beatmaps: Beatmap[]) => {
       };
     }
   }
-  groups.push(currentGroup);
+  if (currentGroup) groups.push(currentGroup);
   return groups.filter(Boolean);
 };

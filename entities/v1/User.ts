@@ -39,11 +39,11 @@ interface Private {
   paypalSubscriptionId?: string;
 }
 
-export const toV2UserPrivate = (userId: number, privateData: Private): UserPrivate => {
+export const toV2UserPrivate = (userId: number, privateData: Private): UserPrivate | null => {
   if (!privateData) return null;
   return {
     user_id: userId,
-    subscription_expiry_date: fromFirestoreTimestamp(privateData.subscriptionExpiryDate),
+    subscription_expiry_date: fromFirestoreTimestamp(privateData.subscriptionExpiryDate) ?? null,
     twitch_display_name: privateData.linkedTwitchAccount?.displayName ?? null,
     twitch_name: privateData.linkedTwitchAccount?.name ?? null,
     twitch_id: privateData.linkedTwitchAccount?.id ?? null,

@@ -3,7 +3,7 @@ export interface FirestoreTimestamp {
   _nanoseconds: number;
 }
 
-export function toFirestoreTimestamp(date: Date | string): FirestoreTimestamp {
+export function toFirestoreTimestamp(date: Date | string): FirestoreTimestamp | undefined {
   return date
     ? {
         _seconds: new Date(date).getTime() / 1000,
@@ -12,7 +12,7 @@ export function toFirestoreTimestamp(date: Date | string): FirestoreTimestamp {
     : undefined;
 }
 
-export function fromFirestoreTimestamp(timestamp: FirestoreTimestamp): string {
+export function fromFirestoreTimestamp(timestamp: FirestoreTimestamp | undefined): string | undefined {
   if (!timestamp) return undefined;
   return new Date(timestamp._seconds * 1000).toISOString();
 }
