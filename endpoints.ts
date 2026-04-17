@@ -24,6 +24,13 @@ export const endpoints = {
         POST: safe`/api/collections/${collectionId}/favourite`,
         DELETE: safe`/api/collections/${collectionId}/favourite`,
       },
+      completion: {
+        GET: safe`/api/collections/${collectionId}/completion`,
+        beatmapsetId: (beatmapsetId: string | number) => ({
+          POST: safe`/api/collections/${collectionId}/completion/${beatmapsetId}`,
+          DELETE: safe`/api/collections/${collectionId}/completion/${beatmapsetId}`,
+        }),
+      },
       rename: {
         PUT: safe`/api/collections/${collectionId}/rename`,
       },
